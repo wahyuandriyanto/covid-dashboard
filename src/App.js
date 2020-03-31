@@ -15,7 +15,7 @@ function App() {
         <LastUpdate />
         <Highlight />
         <div className="detail-case">
-          <div className="detail-case__title">Penambahan Kasus per Hari</div>
+          <div className="detail-case__title">Riwayat Kasus</div>
           <Chart />
         </div>
         <Province />
