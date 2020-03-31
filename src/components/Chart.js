@@ -52,7 +52,7 @@ export default class Chart extends React.Component {
             labels: tgl,
             datasets: [
               {
-                label: "Jumlah Kasus",
+                label: "Jml Kasus",
                 data: jmlKasus,
                 fill: false,
                 lineTension: 0.1,
@@ -88,7 +88,7 @@ export default class Chart extends React.Component {
                 pointRadius: 1
               },
               {
-                label: "Sembuh",
+                label: "Jml Sembuh",
                 data: sembuh,
                 fill: false,
                 lineTension: 0.1,
@@ -106,7 +106,7 @@ export default class Chart extends React.Component {
                 pointRadius: 1
               },
               {
-                label: "Meninggal",
+                label: "Jml Meninggal",
                 data: meninggal,
                 fill: false,
                 lineTension: 0.1,
