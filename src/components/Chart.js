@@ -33,6 +33,8 @@ export default class Chart extends React.Component {
         let tgl = [];
         let jmlKasus = [];
         let kasusBaru = [];
+        let sembuh = [];
+        let meninggal = [];
         res.forEach(element => {
           tgl.push(
             new Date(element.attributes.Tanggal).toLocaleString(["ban", "id"], {
@@ -42,6 +44,8 @@ export default class Chart extends React.Component {
           );
           jmlKasus.push(element.attributes.Jumlah_Kasus_Kumulatif);
           kasusBaru.push(element.attributes.Jumlah_Kasus_Baru_per_Hari);
+          sembuh.push(element.attributes.Jumlah_Pasien_Sembuh);
+          meninggal.push(element.attributes.Jumlah_Pasien_Meninggal);
         });
         this.setState({
           Data: {
@@ -80,6 +84,42 @@ export default class Chart extends React.Component {
                 pointHoverRadius: 4,
                 pointHoverBackgroundColor: "#fed136",
                 pointHoverBorderColor: "#fed136",
+                pointHoverBorderWidth: 2,
+                pointRadius: 1
+              },
+              {
+                label: "Sembuh",
+                data: sembuh,
+                fill: false,
+                lineTension: 0.1,
+                borderColor: "#12a4d9",
+                borderCapStyle: "butt",
+                borderDash: [],
+                borderDashOffset: 0.0,
+                pointBorderColor: "#12a4d9",
+                pointBackgroundColor: "#12a4d9",
+                pointBorderWidth: 6,
+                pointHoverRadius: 4,
+                pointHoverBackgroundColor: "#12a4d9",
+                pointHoverBorderColor: "#12a4d9",
+                pointHoverBorderWidth: 2,
+                pointRadius: 1
+              },
+              {
+                label: "Meninggal",
+                data: meninggal,
+                fill: false,
+                lineTension: 0.1,
+                borderColor: "#322e2f",
+                borderCapStyle: "butt",
+                borderDash: [],
+                borderDashOffset: 0.0,
+                pointBorderColor: "#322e2f",
+                pointBackgroundColor: "#322e2f",
+                pointBorderWidth: 6,
+                pointHoverRadius: 4,
+                pointHoverBackgroundColor: "#322e2f",
+                pointHoverBorderColor: "#322e2f",
                 pointHoverBorderWidth: 2,
                 pointRadius: 1
               }
