@@ -116,7 +116,7 @@ body {
 .dashboard__body .highlight__detail-content {
   display: flex;
   justify-content: space-between;
-  padding: 24px 16px;
+  padding: 24px 8px;
 }
 .dashboard__body .highlight__detail-content .content-text {
   text-align: center;

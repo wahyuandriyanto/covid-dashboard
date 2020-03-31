@@ -59,11 +59,11 @@ export default class Chart extends React.Component {
                 pointBorderColor: "#ee3535",
                 pointBackgroundColor: "#ee3535",
                 pointBorderWidth: 6,
-                pointHoverRadius: 6,
+                pointHoverRadius: 4,
                 pointHoverBackgroundColor: "#ee3535",
                 pointHoverBorderColor: "#ee3535",
                 pointHoverBorderWidth: 2,
-                pointRadius: 2
+                pointRadius: 1
               },
               {
                 label: "Kasus Baru",
@@ -77,11 +77,11 @@ export default class Chart extends React.Component {
                 pointBorderColor: "#fed136",
                 pointBackgroundColor: "#fed136",
                 pointBorderWidth: 6,
-                pointHoverRadius: 6,
+                pointHoverRadius: 4,
                 pointHoverBackgroundColor: "#fed136",
                 pointHoverBorderColor: "#fed136",
                 pointHoverBorderWidth: 2,
-                pointRadius: 2
+                pointRadius: 1
               }
             ]
           }
