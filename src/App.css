@@ -52,7 +52,7 @@ body {
   height: 19px;
 }
 .dashboard__body {
-  padding: 82px 24px 16px;
+  padding: 82px 16px 24px;
 }
 .dashboard__body .title {
   text-align: center;
@@ -110,7 +110,7 @@ body {
   left: 24px;
   right: 24px;
   bottom: -43px;
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.24);
+  box-shadow: 0 8px 24px #e5e4e6;
   border-radius: 16px;
 }
 .dashboard__body .highlight__detail-content {
@@ -137,12 +137,16 @@ body {
   font-size: 12px;
 }
 .dashboard__body .detail-case {
-  padding-top: 82px;
+  margin-top: 82px;
+  box-shadow: 0 8px 24px #e5e4e6;
+  border-radius: 8px;
+  padding: 16px 8px;
 }
 .dashboard__body .detail-case__title {
   font-size: 16px;
   font-weight: 700;
-  padding-bottom: 8px;
+  padding-bottom: 16px;
+  padding-left: 5px;
 }
 .dashboard__body .detail-province {
   padding-top: 24px;
@@ -153,7 +157,7 @@ body {
 }
 .dashboard__body .detail-province__list {
   margin-top: 16px;
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.24);
+  box-shadow: 0 8px 24px #e5e4e6;
   border-radius: 8px;
   position: relative;
   border-left: 4px solid #ee3535;

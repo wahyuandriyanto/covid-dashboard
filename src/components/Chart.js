@@ -135,7 +135,7 @@ export default class Chart extends React.Component {
           data={this.state.Data}
           options={{
             legend: {
-              display: true,
+              display: false,
               position: "top"
             },
             tooltips: {
@@ -143,11 +143,21 @@ export default class Chart extends React.Component {
               intersect: false,
               backgroundColor: "#fff",
               titleFontColor: "#2b2b2b",
-              bodyFontColor: "#2b2b2b"
+              bodyFontColor: "#2b2b2b",
+              position: "nearest"
             },
             hover: {
               mode: "index",
               intersect: false
+            },
+            scales: {
+              yAxes: [
+                {
+                  gridLines: {
+                    display: false
+                  }
+                }
+              ]
             }
           }}
         />
