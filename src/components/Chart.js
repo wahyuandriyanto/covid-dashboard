@@ -31,8 +31,8 @@ export default class Chart extends React.Component {
       .then(result => {
         const res = result.features;
         let tgl = [];
-        let date = [];
         let jmlKasus = [];
+        let kasusBaru = [];
         res.forEach(element => {
           tgl.push(
             new Date(element.attributes.Tanggal).toLocaleString(["ban", "id"], {
@@ -41,6 +41,7 @@ export default class Chart extends React.Component {
             })
           );
           jmlKasus.push(element.attributes.Jumlah_Kasus_Kumulatif);
+          kasusBaru.push(element.attributes.Jumlah_Kasus_Baru_per_Hari);
         });
         this.setState({
           Data: {
@@ -55,7 +56,6 @@ export default class Chart extends React.Component {
                 borderCapStyle: "butt",
                 borderDash: [],
                 borderDashOffset: 0.0,
-
                 pointBorderColor: "#ee3535",
                 pointBackgroundColor: "#ee3535",
                 pointBorderWidth: 6,
@@ -63,7 +63,25 @@ export default class Chart extends React.Component {
                 pointHoverBackgroundColor: "#ee3535",
                 pointHoverBorderColor: "#ee3535",
                 pointHoverBorderWidth: 2,
-                pointRadius: 1
+                pointRadius: 2
+              },
+              {
+                label: "Kasus Baru",
+                data: kasusBaru,
+                fill: false,
+                lineTension: 0.1,
+                borderColor: "#fed136",
+                borderCapStyle: "butt",
+                borderDash: [],
+                borderDashOffset: 0.0,
+                pointBorderColor: "#fed136",
+                pointBackgroundColor: "#fed136",
+                pointBorderWidth: 6,
+                pointHoverRadius: 6,
+                pointHoverBackgroundColor: "#fed136",
+                pointHoverBorderColor: "#fed136",
+                pointHoverBorderWidth: 2,
+                pointRadius: 2
               }
             ]
           }
@@ -79,6 +97,17 @@ export default class Chart extends React.Component {
             legend: {
               display: true,
               position: "top"
+            },
+            tooltips: {
+              mode: "index",
+              intersect: false,
+              backgroundColor: "#fff",
+              titleFontColor: "#2b2b2b",
+              bodyFontColor: "#2b2b2b"
+            },
+            hover: {
+              mode: "index",
+              intersect: false
             }
           }}
         />
