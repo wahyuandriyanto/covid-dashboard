@@ -1,38 +1,189 @@
-.App {
+@import url("https://fonts.googleapis.com/css?family=Comfortaa:300,400,700&display=swap");
+body {
+  background-color: #f2f2f2;
+  color: #10003c;
+  font-family: "Comfortaa", cursive;
+  font-weight: 400;
+  font-size: 14px;
+  margin: 0;
+}
+
+.dashboard {
+  background-color: #ffffff;
+  max-width: 30rem;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  margin: 0 auto;
+  position: relative;
+}
+.dashboard::-webkit-scrollbar {
+  display: none;
+}
+.dashboard__nav {
+  background-color: #ffffff;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 30rem;
+  width: 100%;
+  height: 56px;
+  box-shadow: 0 2px 2px 0 rgba(196, 196, 196, 0.5), 0 2px 4px 0 rgba(0, 0, 0, 0.12);
+  z-index: 99;
+}
+.dashboard__nav-logo {
+  padding: 0 24px;
+}
+.dashboard__nav-logo img {
+  max-width: 30px;
+  height: auto;
+}
+.dashboard__nav-full {
+  padding: 0 24px;
+  cursor: pointer;
+}
+.dashboard__nav-full:active {
+  opacity: 0.2;
+}
+.dashboard__nav-full img {
+  width: 19px;
+  height: 19px;
+}
+.dashboard__body {
+  padding: 82px 24px 16px;
+}
+.dashboard__body .title {
   text-align: center;
+  font-size: 24px;
+  font-weight: 700;
+  max-width: 295px;
+  margin: 0px auto 24px;
+  line-height: 29px;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.dashboard__body .last-update {
+  color: #6e6d7a;
+  text-align: center;
+  font-size: 11px;
+  margin-bottom: 8px;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.dashboard__body .highlight {
+  background-image: linear-gradient(to bottom, #a51e22, #ee3535);
+  width: 100%;
+  padding-bottom: 75%;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.24);
+  border-radius: 24px;
+  position: relative;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.dashboard__body .highlight__flag {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+}
+.dashboard__body .highlight__flag img {
+  width: 32px;
+  height: 32px;
+  opacity: 0.7;
+}
+.dashboard__body .highlight__total {
+  color: #ffffff;
+  position: absolute;
+  width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+}
+.dashboard__body .highlight__total-number {
+  font-size: 59px;
+  font-weight: 700;
+  margin-top: -34px;
+}
+.dashboard__body .highlight__total-status {
+  font-size: 16px;
+}
+.dashboard__body .highlight__detail {
+  background-color: #ffffff;
+  position: absolute;
+  left: 24px;
+  right: 24px;
+  bottom: -43px;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.24);
+  border-radius: 16px;
+}
+.dashboard__body .highlight__detail-content {
+  display: flex;
+  justify-content: space-between;
+  padding: 24px 16px;
+}
+.dashboard__body .highlight__detail-content .content-text {
+  text-align: center;
+  flex: 1;
+  border-right: 1px solid #a51e22;
+}
+.dashboard__body .highlight__detail-content .content-text:last-child {
+  padding-right: 0px;
+  border-right: none;
+}
+.dashboard__body .highlight__detail-content .content-text__number {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+.dashboard__body .highlight__detail-content .content-text__status {
+  color: #6e6d7a;
+  font-size: 12px;
+}
+.dashboard__body .detail-case {
+  padding-top: 82px;
+}
+.dashboard__body .detail-case__title {
+  font-size: 16px;
+  font-weight: 700;
+  padding-bottom: 8px;
+}
+.dashboard__body .detail-province {
+  padding-top: 24px;
+}
+.dashboard__body .detail-province__title {
+  font-size: 16px;
+  font-weight: 700;
+}
+.dashboard__body .detail-province__list {
+  margin-top: 16px;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.24);
+  border-radius: 8px;
+  position: relative;
+  border-left: 4px solid #ee3535;
+}
+.dashboard__body .detail-province__list-data {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.dashboard__body .detail-province__list-data .data-province {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+.dashboard__body .detail-province__list-data .data-covid {
+  display: flex;
+  justify-content: space-between;
+}
+.dashboard__body .detail-province__list-data .data-covid__detail {
+  flex: 1;
+}
+.dashboard__body .detail-province__list-data .data-covid__detail-number {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+.dashboard__body .detail-province__list-data .data-covid__detail-status {
+  color: #6e6d7a;
+  font-size: 12px;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+/*# sourceMappingURL=style.css.map */
