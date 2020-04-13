@@ -7,6 +7,13 @@ import Chart from "./components/Chart";
 import Province from "./components/Province.js";
 
 function App() {
+  const scrollTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+  
   return (
     <div className="dashboard">
       <Nav />
@@ -19,6 +26,11 @@ function App() {
           <Chart />
         </div>
         <Province />
+      </div>
+      <div className="up">
+        <div className="rounded" onClick={scrollTop}>
+          <img src="dist/img/up.svg" />
+        </div>
       </div>
     </div>
   );
