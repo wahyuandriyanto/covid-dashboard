@@ -5,19 +5,19 @@ class Highlight extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      data: []
+      data: [],
     };
   }
   componentDidMount() {
     fetch("https://api.kawalcorona.com/indonesia/")
-      .then(response => response.json())
-      .then(result => {
+      .then((response) => response.json())
+      .then((result) => {
         this.setState({ data: result });
       });
   }
   render() {
     const { data } = this.state;
-    return data.map(total => (
+    return data.map((total) => (
       <div class="highlight">
         <div class="highlight__flag">
           <img src="dist/img/indonesia.png" />
@@ -31,8 +31,8 @@ class Highlight extends Component {
             <div class="content-text">
               <div class="content-text__number">
                 {parseInt(total.positif.split(",").join("")) -
-                  total.sembuh -
-                  total.meninggal}
+                  parseInt(total.sembuh.split(",").join("")) -
+                  parseInt(total.meninggal.split(",").join(""))}
               </div>
               <div class="content-text__status">Perawatan</div>
             </div>
