@@ -44,16 +44,34 @@ export default class Chart extends React.Component {
           );
           jmlKasus.push(element.attributes.Jumlah_Kasus_Kumulatif);
           kasusBaru.push(element.attributes.Jumlah_Kasus_Baru_per_Hari);
-          sembuh.push(element.attributes.Jumlah_Pasien_Sembuh);
-          meninggal.push(element.attributes.Jumlah_Pasien_Meninggal);
+          sembuh.push(element.attributes.Jumlah_Kasus_Sembuh_per_Hari);
+          meninggal.push(element.attributes.Jumlah_Kasus_Meninggal_per_Hari);
         });
         this.setState({
           Data: {
             labels: tgl,
             datasets: [
+              // {
+              //   label: "Jml Kasus",
+              //   data: jmlKasus,
+              //   fill: false,
+              //   lineTension: 0.1,
+              //   borderColor: "#ee3535",
+              //   borderCapStyle: "butt",
+              //   borderDash: [],
+              //   borderDashOffset: 0.0,
+              //   pointBorderColor: "#ee3535",
+              //   pointBackgroundColor: "#ee3535",
+              //   pointBorderWidth: 6,
+              //   pointHoverRadius: 4,
+              //   pointHoverBackgroundColor: "#ee3535",
+              //   pointHoverBorderColor: "#ee3535",
+              //   pointHoverBorderWidth: 2,
+              //   pointRadius: 1
+              // },
               {
-                label: "Jml Kasus",
-                data: jmlKasus,
+                label: "Kasus Baru",
+                data: kasusBaru,
                 fill: false,
                 lineTension: 0.1,
                 borderColor: "#ee3535",
@@ -70,8 +88,8 @@ export default class Chart extends React.Component {
                 pointRadius: 1
               },
               {
-                label: "Kasus Baru",
-                data: kasusBaru,
+                label: "Sembuh",
+                data: sembuh,
                 fill: false,
                 lineTension: 0.1,
                 borderColor: "#fed136",
@@ -88,25 +106,7 @@ export default class Chart extends React.Component {
                 pointRadius: 1
               },
               {
-                label: "Jml Sembuh",
-                data: sembuh,
-                fill: false,
-                lineTension: 0.1,
-                borderColor: "#12a4d9",
-                borderCapStyle: "butt",
-                borderDash: [],
-                borderDashOffset: 0.0,
-                pointBorderColor: "#12a4d9",
-                pointBackgroundColor: "#12a4d9",
-                pointBorderWidth: 6,
-                pointHoverRadius: 4,
-                pointHoverBackgroundColor: "#12a4d9",
-                pointHoverBorderColor: "#12a4d9",
-                pointHoverBorderWidth: 2,
-                pointRadius: 1
-              },
-              {
-                label: "Jml Meninggal",
+                label: "Meninggal",
                 data: meninggal,
                 fill: false,
                 lineTension: 0.1,
