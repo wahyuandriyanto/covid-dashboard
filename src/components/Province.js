@@ -13,14 +13,17 @@ class Province extends Component {
     this.getProvince();
   }
   getProvince() {
+    const proxy = "https://cors-anywhere.herokuapp.com/";
+    const urlIndo = "https://api.kawalcorona.com/indonesia/provinsi/";
+    const urlGlobal = "https://api.kawalcorona.com"
     if (this.state.isToggle === true) {
-      fetch("https://api.kawalcorona.com/indonesia/provinsi/")
+      fetch(proxy + urlIndo)
         .then((response) => response.json())
         .then((result) => {
           this.setState({ data: result });
         });
     } else {
-      fetch("https://api.kawalcorona.com")
+      fetch(proxy + urlGlobal)
         .then((response) => response.json())
         .then((result) => {
           this.setState({ data: result });

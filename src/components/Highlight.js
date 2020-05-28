@@ -9,7 +9,10 @@ class Highlight extends Component {
     };
   }
   componentDidMount() {
-    fetch("https://api.kawalcorona.com/indonesia/")
+    const proxy = "https://cors-anywhere.herokuapp.com/";
+    const url = "https://api.kawalcorona.com/indonesia/"
+
+    fetch(proxy + url)
       .then((response) => response.json())
       .then((result) => {
         this.setState({ data: result });
