@@ -1,57 +1,52 @@
-import React from "react";
-import { Component } from "react";
+import React, { useEffect} from "react";
+import { useSelector } from "react-redux";
+import { getDataCovidIndo } from "../api";
+import { indoCovidSelector } from "../redux/selector/selector";
 
-class Highlight extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      data: [],
-    };
-  }
-  componentDidMount() {
-    const proxy = "https://cors-anywhere.herokuapp.com/";
-    const url = "https://api.kawalcorona.com/indonesia/"
+function Highlight() {
+  const total = useSelector(indoCovidSelector);
+  useEffect(() => {
+    getDataCovidIndo();
+  }, []);
 
-    fetch(proxy + url)
-      .then((response) => response.json())
-      .then((result) => {
-        this.setState({ data: result });
-      });
-  }
-  render() {
-    const { data } = this.state;
-    return data.map((total) => (
-      <div class="highlight">
-        <div class="highlight__flag">
+  return (
+    <>
+      <div className="highlight">
+        <div className="highlight__flag">
           <img src="dist/img/indonesia.png" />
         </div>
-        <div class="highlight__total">
-          <div class="highlight__total-number">{total.positif}</div>
-          <div class="highlight__total-status">Positif</div>
+
+        <div className="highlight__total">
+          <div className="highlight__total-number">
+            {total && total.jumlah_positif}
+          </div>
+          <div className="highlight__total-status">Positif</div>
         </div>
-        <div class="highlight__detail">
-          <div class="highlight__detail-content">
-            <div class="content-text">
-              <div class="content-text__number">
-                {parseInt(total.positif.split(",").join("")) -
-                  parseInt(total.sembuh.split(",").join("")) -
-                  parseInt(total.meninggal.split(",").join(""))}
+        <div className="highlight__detail">
+          <div className="highlight__detail-content">
+            <div className="content-text">
+              <div className="content-text__number">
+                {total && total.jumlah_dirawat}
               </div>
-              <div class="content-text__status">Perawatan</div>
+              <div className="content-text__status">Perawatan</div>
             </div>
-            <div class="content-text">
-              <div class="content-text__number">{total.sembuh}</div>
-              <div class="content-text__status">Sembuh</div>
+            <div className="content-text">
+              <div className="content-text__number">
+                {total && total.jumlah_sembuh}
+              </div>
+              <div className="content-text__status">Sembuh</div>
             </div>
-            <div class="content-text">
-              <div class="content-text__number">{total.meninggal}</div>
-              <div class="content-text__status">Meninggal</div>
+            <div className="content-text">
+              <div className="content-text__number">
+                {total && total.jumlah_meninggal}
+              </div>
+              <div className="content-text__status">Meninggal</div>
             </div>
           </div>
         </div>
       </div>
-    ));
-  }
+    </>
+  );
 }
 
 export default Highlight;
