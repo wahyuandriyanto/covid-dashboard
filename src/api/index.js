@@ -1,4 +1,4 @@
-import { covidIndo, covidIndoLoading } from '../redux/action/action';
+import { covidIndo, covidIndoLoading, covidHarian } from '../redux/action/action';
 import {store} from '../redux/index';
 
 
@@ -11,7 +11,8 @@ export const getDataCovidIndo = () => {
     .then((res) => res.json())
     .then((json) => {
       dispatch(covidIndo(json.update.total));
-      dispatch(covidIndoLoading(false))
+      dispatch(covidIndoLoading(false));
+      dispatch(covidHarian(json.update.harian));
       return json;
     });
 };
