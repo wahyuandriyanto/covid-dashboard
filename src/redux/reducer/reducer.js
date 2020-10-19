@@ -1,5 +1,6 @@
 const initialState = {
   covidIndo: {},
+  loading: true,
 };
 
 const dataCovid = (state = initialState, action) => {
@@ -8,6 +9,11 @@ const dataCovid = (state = initialState, action) => {
       return {
         ...state,
         covidIndo: action.value,
+      };
+    case "COVID_INDO_LOADING":
+      return {
+        ...state,
+        loading: action.value,
       };
     default:
       return state;
