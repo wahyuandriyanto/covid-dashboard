@@ -1,12 +1,12 @@
 import Dashboard from "../pages/Dashboard";
-import About from "../pages/About";
+import Provinsi from "../pages/Provinsi";
 
 const appRoutes = [
   {
-    name: "About",
-    component: About,
+    name: "Provinsi",
+    component: Provinsi,
     exact: true,
-    path: "/about"
+    path: "/provinsi/:id"
   },
   {
     name: "Dashboard",

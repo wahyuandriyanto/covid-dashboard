@@ -1,5 +1,4 @@
 import React from "react";
-import '../../App.css';
 import Nav from "../../components/Nav";
 import LastUpdate from "../../components/LastUpdate";
 import Highlight from "../../components/Highlight";

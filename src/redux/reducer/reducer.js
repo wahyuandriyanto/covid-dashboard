@@ -1,7 +1,7 @@
 const initialState = {
   covidIndo: {},
   loading: true,
-  covidHarian: []
+  covidProv: []
 };
 
 const dataCovid = (state = initialState, action) => {
@@ -16,10 +16,10 @@ const dataCovid = (state = initialState, action) => {
         ...state,
         loading: action.value,
       };
-    case "COVID_HARIAN":
+    case "COVID_PROV":
       return {
         ...state,
-        covidHarian: action.value,
+        covidProv: action.value,
       }
     default:
       return state;
