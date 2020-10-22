@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { getDataCovidProv } from "../api";
+import { NumberFormat } from "../helper";
 import { covidProvSelector } from "../redux/selector/selector";
 
 function Province() {
@@ -23,19 +24,19 @@ function Province() {
               <div class="data-covid">
                 <div class="data-covid__detail">
                   <div class="data-covid__detail-number">
-                    {total.jumlah_kasus}
+                    {NumberFormat(total.jumlah_kasus)}
                   </div>
                   <div class="data-covid__detail-status">Terkonfirmasi</div>
                 </div>
                 <div class="data-covid__detail">
                   <div class="data-covid__detail-number">
-                    {total.jumlah_sembuh}
+                    {NumberFormat(total.jumlah_sembuh)}
                   </div>
                   <div class="data-covid__detail-status">Sembuh</div>
                 </div>
                 <div class="data-covid__detail">
                   <div class="data-covid__detail-number">
-                    {total.jumlah_meninggal}
+                    {NumberFormat(total.jumlah_meninggal)}
                   </div>
                   <div class="data-covid__detail-status">Meninggal</div>
                 </div>

@@ -84,6 +84,7 @@ function Chart() {
     });
   };
 
+ 
   // listData();
 
   useEffect(() => {

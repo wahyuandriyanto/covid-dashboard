@@ -1,7 +1,9 @@
 import React, { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { Link, useParams } from "react-router-dom";
+import { getDataCovidProv } from "../../api";
 import Nav from "../../components/Nav";
+import { NumberFormat } from "../../helper";
 import { covidProvSelector } from "../../redux/selector/selector";
 
 function Provinsi() {
@@ -18,6 +20,7 @@ function Provinsi() {
     window.scrollTo({
       top: 0
     })
+    getDataCovidProv();
   }, []);
 
   const listFilter = data.filter((list) => {
@@ -67,7 +70,7 @@ function Provinsi() {
                     <div className="box-content__jml">
                       {list.jumlah_sembuh}
                       <div className="box-content__penambahan">
-                        + {list.penambahan.sembuh}
+                        + {NumberFormat(list.penambahan.sembuh)}
                       </div>
                     </div>
                     <div className="box-content__title">Sembuh</div>
@@ -78,7 +81,7 @@ function Provinsi() {
                     <div className="box-content__jml">
                       {list.jumlah_meninggal}
                       <div className="box-content__penambahan">
-                        + {list.penambahan.meninggal}
+                        + {NumberFormat(list.penambahan.meninggal)}
                       </div>
                     </div>
                     <div className="box-content__title">Meninggal</div>
@@ -96,14 +99,14 @@ function Provinsi() {
                     </thead>
                     <tbody>
                       <tr>
-                        <td>{jk.doc_count}</td>
+                        <td>{NumberFormat(jk.doc_count)}</td>
                       </tr>
                     </tbody>
                   </table>
                 ))}
               </div>
               <div className="kelompok-wrapper">
-                <div className="sub-title">Kelompok Umur</div>
+                <div className="sub-title">Kelompok Usia</div>
                 <table>
                   <thead>
                     <tr>
@@ -115,7 +118,7 @@ function Provinsi() {
                     {list.kelompok_umur.map((umur) => (
                       <tr>
                         <td>{umur.key}</td>
-                        <td>{umur.doc_count}</td>
+                        <td>{NumberFormat(umur.doc_count)}</td>
                       </tr>
                     ))}
                   </tbody>

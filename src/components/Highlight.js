@@ -1,10 +1,12 @@
 import React, { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { getDataCovidIndo } from "../api";
+import { NumberFormat } from "../helper";
 import {
   indoCovidLoadingSelector,
   indoCovidSelector,
 } from "../redux/selector/selector";
+
 
 function Highlight() {
   const total = useSelector(indoCovidSelector);
@@ -26,7 +28,7 @@ function Highlight() {
           <>
             <div className="highlight__total">
               <div className="highlight__total-number">
-                {total && total.jumlah_positif}
+                {NumberFormat(total && total.jumlah_positif)}
               </div>
               <div className="highlight__total-status">Positif</div>
             </div>
@@ -34,19 +36,19 @@ function Highlight() {
               <div className="highlight__detail-content">
                 <div className="content-text">
                   <div className="content-text__number">
-                    {total && total.jumlah_dirawat}
+                    {NumberFormat(total && total.jumlah_dirawat)}
                   </div>
                   <div className="content-text__status">Perawatan</div>
                 </div>
                 <div className="content-text">
                   <div className="content-text__number">
-                    {total && total.jumlah_sembuh}
+                    {NumberFormat(total && total.jumlah_sembuh)}
                   </div>
                   <div className="content-text__status">Sembuh</div>
                 </div>
                 <div className="content-text">
                   <div className="content-text__number">
-                    {total && total.jumlah_meninggal}
+                    {NumberFormat(total && total.jumlah_meninggal)}
                   </div>
                   <div className="content-text__status">Meninggal</div>
                 </div>
