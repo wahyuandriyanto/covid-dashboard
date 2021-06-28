@@ -18,7 +18,7 @@ function Highlight() {
     <>
       <div className="highlight">
         <div className="highlight__flag">
-          <img src="dist/img/indonesia.png" />
+          <img src="dist/img/indonesia.png" alt="id"/>
         </div>
         {loading ? (
           <div className="loader-wrapper">

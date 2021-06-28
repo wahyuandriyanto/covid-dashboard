@@ -1,8 +1,7 @@
 import React, { useEffect } from "react";
 import { useSelector } from "react-redux";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { getDataCovidProv } from "../../api";
-import Nav from "../../components/Nav";
 import { NumberFormat } from "../../helper";
 import { covidProvSelector } from "../../redux/selector/selector";
 
@@ -33,11 +32,11 @@ function Provinsi() {
         <div className="dashboard">
           <div className="dashboard__nav">
             <div className="dashboard__nav-logo c-pointer" onClick={() => window.history.back()}>
-              <img src="/dist/img/left-arrow.svg" />
+              <img src="/dist/img/left-arrow.svg" alt="arrow_left"/>
             </div>
             <div className="dashboard__nav-title">{list.key}</div>
             <div className="dashboard__nav-full">
-              <img src="/dist/img/fullscreen.svg" />
+              <img src="/dist/img/fullscreen.svg" alt="fullscreen"/>
             </div>
           </div>
           <div className="dashboard__body">
@@ -128,7 +127,7 @@ function Provinsi() {
           </div>
           <div className="up">
             <div className="rounded" onClick={scrollTop}>
-              <img src="/dist/img/up.svg" />
+              <img src="/dist/img/up.svg" alt="ic_up"/>
             </div>
           </div>
         </div>

@@ -27,7 +27,7 @@ function Dashboard () {
       </div>
       <div className="up">
         <div className="rounded" onClick={scrollTop}>
-          <img src="dist/img/up.svg" />
+          <img src="dist/img/up.svg" alt="ic_up"/>
         </div>
       </div>
     </div>
